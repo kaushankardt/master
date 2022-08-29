@@ -10,13 +10,13 @@
 # $5 = custom event description
 
 # read Dynatrace values from the pipeline variables
-$DYNATRACE_API_URL=$Args[0] + "/api/v1/events"
+$DYNATRACE_API_URL=$Args[0] + "/api/v2/events"
 $DYNATRACE_API_TOKEN=$Args[1]
 
 # set the data for the API call
 # adjust the number of tags in the JSON below and tag variables values
 $TAG_VALUE_ENVIRONMENT=$Args[2]
-$TAG_VALUE_SERVICE=$Args[3]
+$TAG_VALUE_CLIENT=$Args[3]
 
 # values for the event
 $TITLE=$Args[4]
@@ -77,7 +77,7 @@ Write-Host "CI_BACKLINK           : "$CI_BACKLINK
 Write-Host ""
 Write-Host "DYNATRACE_API_URL     : "$DYNATRACE_API_URL
 Write-Host "TAG_VALUE_ENVIRONMENT : "$TAG_VALUE_ENVIRONMENT
-Write-Host "TAG_VALUE_SERVICE     : "$TAG_VALUE_SERVICE
+Write-Host "TAG_VALUE_CLIENT      : "$TAG_VALUE_SERVICE
 Write-Host "REQUEST_BODY          : "$REQUEST_BODY
 Write-Host "==============================================================="
 Write-Host "Calling Dynatrace Event API..."
