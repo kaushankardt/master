@@ -14,7 +14,7 @@ $DYNATRACE_API_TOKEN=$Args[1]
 # set the data for the API call
 # adjust the number of tags in the JSON below and tag variables values
 $TAG_VALUE_ENVIRONMENT=$Args[2]
-$TAG_VALUE_SERVICE=$Args[3]
+$TAG_VALUE_CLIENT=$Args[3]
 
 # set values that are passes as Dyntrace event context
 # you can adjust these as you see fit
@@ -46,7 +46,7 @@ $REQUEST_BODY=@"
                         {
                             "context" : "CONTEXTLESS",
                             "key": "service",
-                            "value" : "$TAG_VALUE_SERVICE"    
+                            "value" : "$TAG_VALUE_CLIENT"    
                         }
                         ]
                 }
@@ -64,7 +64,7 @@ Write-Host "CI_BACKLINK           : "$CI_BACKLINK
 Write-Host ""
 Write-Host "DYNATRACE_API_URL     : "$DYNATRACE_API_URL
 Write-Host "TAG_VALUE_ENVIRONMENT : "$TAG_VALUE_ENVIRONMENT
-Write-Host "TAG_VALUE_SERVICE     : "$TAG_VALUE_SERVICE
+Write-Host "TAG_VALUE_CLIENT      : "$TAG_VALUE_SERVICE
 Write-Host "REQUEST_BODY          : "$REQUEST_BODY
 Write-Host "==============================================================="
 Write-Host "Calling Dynatrace Event API..."
